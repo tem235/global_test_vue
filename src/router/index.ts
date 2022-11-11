@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter, RouteRecordRaw } from 'vue-router'
+import { useAuthStore } from '@/stores'
 import Login from '@/views/LoginView.vue'
 import Main from '@/views/MainView.vue'
 import Product from '@/views/ProductView.vue'
@@ -10,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Login',
         component: Login,
         meta: {
-            layout: 'AppLayoutAuth'
+            layout: 'AuthLayout'
         }
     },
     {
@@ -36,11 +37,19 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
             layout: 'AppLayoutDefault'
         }
-    }
+    },
 ]
 const router = createRouter({
     history: createWebHistory(),
     routes,
+})
+
+router.beforeEach((to, from, next) => {
+    if (to.name !== 'Login' && !useAuthStore().token) next({ name: 'Login' })
+    else if (to.name == 'Login' && useAuthStore().token) {
+        next({ name: 'Main' })
+    }
+    else next()
 })
 
 export default router

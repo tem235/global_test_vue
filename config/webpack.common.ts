@@ -15,6 +15,16 @@ const config: webpack.Configuration = {
         alias: {
             '@': path.resolve(__dirname, '../src'),
         },
+        fallback: {
+            "http": require.resolve("stream-http"),
+            "https": require.resolve("https-browserify"),
+            "stream": require.resolve("stream-browserify"),
+            "zlib": require.resolve("browserify-zlib"),
+            "url": require.resolve("url/"),
+            "buffer": require.resolve("buffer/"),
+            "assert": require.resolve("assert/"),
+            "util": require.resolve("util/")
+        }
     },
     module: {
         rules: [
@@ -54,7 +64,7 @@ const config: webpack.Configuration = {
         new Dotenv({
             path: './.env'
         }),
-    ]
+    ],
 };
 
 export default config;
