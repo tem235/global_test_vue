@@ -14,9 +14,11 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@types/dotenv-webpack": "^7.0.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.2.2",
+    "dotenv-webpack": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "node-sass": "^8.0.0",

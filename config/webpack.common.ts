@@ -1,19 +1,21 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
+import Dotenv from 'dotenv-webpack';
 
 const config: webpack.Configuration = {
+
     entry: './src/main.ts',
     output: {
         path: path.resolve(__dirname, '../dist'),
     },
-    resolve: {  
-        extensions: [ '.tsx', '.ts', '.js' ],
-        alias: {  
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
             '@': path.resolve(__dirname, '../src'),
-        },  
-      }, 
+        },
+    },
     module: {
         rules: [
             {
@@ -48,6 +50,9 @@ const config: webpack.Configuration = {
         new HtmlWebpackPlugin({
             template: '/src/index.html',
             filename: 'index.html',
+        }),
+        new Dotenv({
+            path: './.env'
         }),
     ]
 };
