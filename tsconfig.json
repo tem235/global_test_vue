@@ -3,5 +3,14 @@
         "strict": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-    }
+        "paths": { "@/*": ["./src/*", "./dist/*"] },
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+      ],
+      "exclude": ["node_modules"]
 }

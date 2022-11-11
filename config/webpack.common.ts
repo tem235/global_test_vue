@@ -8,6 +8,12 @@ const config: webpack.Configuration = {
     output: {
         path: path.resolve(__dirname, '../dist'),
     },
+    resolve: {  
+        extensions: [ '.tsx', '.ts', '.js' ],
+        alias: {  
+            '@': path.resolve(__dirname, '../src'),
+        },  
+      }, 
     module: {
         rules: [
             {

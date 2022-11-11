@@ -1,18 +1,15 @@
 <template>
-    <h1>{{ name }} app</h1>
-    <img src="./assets/images/vue.png" alt="">
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/product">Product</router-link> |
+    <router-link to="/cart">Cart</router-link> |
+    <router-link to="/login">Login</router-link>
+  </nav>
+
+  <AppLayout>
+    <router-view />
+  </AppLayout>
 </template>
   
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-    data() {
-        return {
-            name: "Vue",
-        }
-    }
-})
-</script>
 
 
