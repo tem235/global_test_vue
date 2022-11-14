@@ -2,11 +2,14 @@ import axios, { AxiosRequestConfig, AxiosInstance } from 'axios'
 import { useAuthStore } from '@/stores'
 
 const config: AxiosRequestConfig = {
-    baseURL: process.env.VUE_APP_URL
+    baseURL: process.env.VUE_APP_URL,
+    headers: {
+        "Content-type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+    }
 }
 
 const client: AxiosInstance = axios.create(config)
-
 
 client.interceptors.request.use((config: AxiosRequestConfig) => {
     if (config.headers) {

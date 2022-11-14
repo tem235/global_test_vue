@@ -3,7 +3,9 @@ import { useAuthStore } from '@/stores'
 import Login from '@/views/LoginView.vue'
 import Main from '@/views/MainView.vue'
 import Product from '@/views/ProductView.vue'
+import Category from '@/views/CategoryView.vue'
 import Cart from '@/views/CartView.vue'
+import ErrorView from '@/views/ErrorView.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -23,9 +25,17 @@ const routes: Array<RouteRecordRaw> = [
         }
     },
     {
-        path: '/product',
+        path: '/product/:id',
         name: 'Product',
         component: Product,
+        meta: {
+            layout: 'AppLayoutDefault'
+        }
+    },
+    {
+        path: '/category/:id',
+        name: 'Category',
+        component: Category,
         meta: {
             layout: 'AppLayoutDefault'
         }
@@ -38,6 +48,15 @@ const routes: Array<RouteRecordRaw> = [
             layout: 'AppLayoutDefault'
         }
     },
+    {
+        path: '/:pathMatch(.*)*',
+        component: ErrorView,
+        meta: {
+            layout: 'AppLayoutDefault'
+        }
+    }
+
+
 ]
 const router = createRouter({
     history: createWebHistory(),

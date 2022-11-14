@@ -1,0 +1,20 @@
+.cart-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        width: 95px;
+        height: 110px;
+    }
+
+    &-options {
+        display: flex;
+        align-items: center;
+    }
+}
