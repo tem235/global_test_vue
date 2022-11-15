@@ -1,20 +1,28 @@
 <template>
-    <h1>Product</h1>
+    <div class="container">
+        <div v-if="product.name" class="product">
+            <div class="product-images">
+                <img :src="product.thumbnailUrl" alt="">
+            </div>
+            <div class="product-info">
+                <h3 class="product-info__title">{{ product.name }}</h3>
+                <p class="product-info__price bold">{{ product.defaultDisplayedPriceFormatted }}</p>
+                <div class="product-info-options" v-for="option in product.options">
+                    <label for="size">Размер</label>
+                    <select name="" id="size" v-model="size">
+                        <option v-for="choices in option.choices" :value="choices.text">{{ choices.text }}</option>
+                    </select>
+                </div>
+                <div class="product-info-count">
+                    <label for="">Количество</label>
+                    <input type="text" v-model="count">
+                </div>
+                <button class="button" @click="addToCart">Добавить в корзину</button>
+            </div>
 
-    <div v-if="product.name" class="">
-        <img :src="product.thumbnailUrl" alt="">
-        <h1>{{ product.name }}</h1>
-        <p>{{ product.defaultDisplayedPriceFormatted }}</p>
-        <div class="" v-for="option in product.options">
-            <select name="" id="" v-model="size">
-                <option v-for="choices in option.choices" :value="choices.text">{{ choices.text }}</option>
-            </select>
         </div>
-        <div class="">
-            <input v-model="count" type="number">
-        </div>
-        <button @click="addToCart">Добавить в корзину</button>
     </div>
+
 </template>
 
 <script lang="ts">

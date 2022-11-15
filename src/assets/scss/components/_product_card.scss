@@ -1,0 +1,24 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin-bottom: 1em;
+
+    &__img {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    &__title {
+        margin-bottom: 0.375em;
+    }
+
+    &__price {
+        margin-bottom: 0.375em;
+    }
+
+    &:visited {
+        color: $white;
+    }
+}

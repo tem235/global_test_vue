@@ -1,5 +1,5 @@
 <template>
-    <button @click="authStore.login">Login</button>
+    <button class="button" @click="authStore.login">Login</button>
 </template>
 
 <script setup lang="ts">

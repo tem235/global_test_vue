@@ -9,7 +9,7 @@ export const useCartStore = defineStore({
     getters: {
         getCart: state => state.cart,
         getAllCounter: state => state.cart.reduce((acc, sum) => {
-            return acc + sum.count
+            return acc += sum.count
         }, 0),
         getSumPrice: state => state.cart.reduce((acc, sum) => {
             return acc + (sum.product.defaultDisplayedPrice * sum.count)
@@ -33,7 +33,7 @@ export const useCartStore = defineStore({
             localStorage.setItem('cart', JSON.stringify(this.getCart));
         },
         createOrder() {
-            alert(`Общая стоимость${this.getSumPrice}`)
+            alert(`Общая стоимость ${this.getSumPrice} рублей`)
             localStorage.removeItem("cart");
             this.cart = []
         },

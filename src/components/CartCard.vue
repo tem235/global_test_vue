@@ -13,11 +13,10 @@
             </div>
         </div>
         <div class="cart-card-price">
-            <h4>Price</h4>
-            <p>{{item.product.defaultDisplayedPrice * item.count}}</p>
+            <p class="bold">{{ item.product.defaultDisplayedPrice * item.count }} руб.</p>
         </div>
         <div class="cart-card-actions">
-            <button @click="deleteItem(index)">Delete</button>
+            <button class="button--transparent" @click="deleteItem(index)"><TrashIcon/></button>
         </div>
     </div>
 </template>
@@ -25,6 +24,7 @@
 <script setup lang="ts">
 import { useCartStore } from '@/stores';
 import ICartItem from '@/types/ICartItem'
+import TrashIcon from '../components/icons/TrashIcon.vue'
 
 defineProps<{
     item: ICartItem,

@@ -1,0 +1,19 @@
+.container {
+    margin: auto;
+
+    @include sm {
+        max-width: $screen-sm-min;
+    }
+
+    @include md {
+        max-width: $screen-md-min;
+    }
+
+    @include lg {
+        max-width: $screen-lg-min;
+    }
+
+    @include xl {
+        max-width: $screen-xl-min;
+    }
+}

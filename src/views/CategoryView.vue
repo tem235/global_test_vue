@@ -1,12 +1,9 @@
 <template>
-    <h1>Category</h1>
-
-    <div class="">
-        <img :src="catrgory.thumbnailUrl">
-        <h3>{{ catrgory.name }}</h3>
-    </div>
-    <div class="">
-        <ProductCard v-for="product in products" :product="product" />
+    <div class="container">
+        <h2>{{ catrgory.name }}</h2>
+        <div class="products">
+            <ProductCard v-for="product in products" :product="product" />
+        </div>
     </div>
 </template>
 

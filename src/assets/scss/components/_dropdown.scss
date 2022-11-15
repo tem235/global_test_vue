@@ -1,0 +1,16 @@
+.dropdown {
+    position: relative;
+
+    &-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &-menu {
+        position: absolute;
+        bottom: -1em;
+        display: flex;
+        flex-direction: column;
+    }
+}

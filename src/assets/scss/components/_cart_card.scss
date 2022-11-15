@@ -2,10 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 1em;
+    border-bottom: 1px solid $text-color;
 
     &-info {
         display: flex;
         align-items: center;
+        max-width: 320px;
     }
 
     &__img {
@@ -16,5 +20,9 @@
     &-options {
         display: flex;
         align-items: center;
+
+        input {
+            margin-right: 1em;
+        }
     }
 }

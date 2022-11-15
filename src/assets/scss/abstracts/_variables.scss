@@ -1,0 +1,32 @@
+// Colors
+$accent-color: #E0BEA2;
+$text-color: #252525;
+$white: #fff;
+
+// Font
+$font-base: 'Raleway';
+$font-size: 1em;
+$font-scale: 0.125em;
+
+$text-xs: $font-size - ($font-scale * 2);
+$text-sm: $font-size - $font-scale;
+$text-md: $font-size + $font-scale;
+$text-lg: $font-size + ($font-scale * 2);
+$text-xl: $font-size + ($font-scale * 3);
+$text-xxl: $font-size + ($font-scale * 4);
+$text-xxxl: $font-size + ($font-scale * 5);
+
+
+// Transition
+$transition-time: .3s;
+
+// Shadow
+$box-shadow: 0px 5px 7px rgba(37, 37, 37, 0.15);
+$box-shadow-inset: inset 0px 3px 7px rgba(37, 37, 37, 0.15);
+
+
+// Breackpoints
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;

@@ -1,9 +1,11 @@
 <template>
-    <div class="categories">
-        <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
-    </div>
-    <div class="products">
-        <ProductCard v-for="product in products" :product="product" :key="product.id" />
+    <div class="container">
+        <div class="categories">
+            <CategoryCard v-for="category in categories" :category="category" :key="category.id" />
+        </div>
+        <div class="products">
+            <ProductCard v-for="product in products" :product="product" :key="product.id" />
+        </div>
     </div>
 </template>
 
