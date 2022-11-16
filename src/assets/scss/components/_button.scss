@@ -1,3 +1,9 @@
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .button {
     display: flex;
     justify-content: center;
@@ -31,9 +37,5 @@
     &--transparent {
         background: transparent;
         border: none;
-
-        &:hover {
-            cursor: pointer;
-        }
     }
 }

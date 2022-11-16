@@ -29,7 +29,8 @@ export default defineComponent({
 
         getCategoryById(id).then((res: ICategory) => {
             this.catrgory = res
-            getProducts({ keyword: res.name }).then(res => this.products = res)
+            getProducts({ keyword: res.name })
+                .then(res => this.products = res)
         })
     }
 })

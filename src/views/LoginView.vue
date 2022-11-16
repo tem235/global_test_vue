@@ -1,5 +1,7 @@
 <template>
-    <button class="button" @click="authStore.login">Login</button>
+    <div class="login-view">
+        <button class="button" @click="authStore.login">Login</button>
+    </div>
 </template>
 
 <script setup lang="ts">
