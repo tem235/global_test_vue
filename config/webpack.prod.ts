@@ -11,15 +11,10 @@ const prodConfig: webpack.Configuration = merge(common, {
     devtool: false,
 
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, '../dist/spa'),
         publicPath: '/',
         filename: 'js/[name].[contenthash].bundle.js',
     },
-
-
-    // Production: Magic happen here transpiling to es5 to partly support older browser like IE11
-    target: ['web', 'es5'],
-
     plugins: [
         // Extracts CSS into separate files
         // Note: style-loader is for development, MiniCssExtractPlugin is for production
